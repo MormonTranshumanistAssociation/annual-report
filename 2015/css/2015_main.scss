@@ -1,0 +1,373 @@
+$headerFontFamily: 'Open Sans Condensed', sans-serif;
+$sectionColor: #ff5335;
+$articleOddBgColor: rgb(66, 50, 106);
+$articleOddBlockquoteColor: rgba(66, 50, 106, 0.5);
+$articleOddTextColor: rgba(255,255,255,0.8);
+$articleOddLinkColor: #ff664c;
+$articleEvenBgColor: white;
+$articleEvenlockquoteColor: rgba(255,255,255,0.5);
+$articleEvenTextColor: #42326a;
+$articleEvenLinkColor: #ff5335;
+
+.in-progress {
+  color: red;
+  font-weight: bold;
+}
+
+#financials table {
+   margin: 36px 0;
+   border: none !important;
+   border-collapse: collapse;
+}
+
+#financials table th {
+     background-color: $articleOddBgColor;
+     color: $articleEvenBgColor;
+     border-bottom: none !important;
+     font-weight: normal;
+
+}
+
+#financials table th,
+#financials table td {
+   border-bottom: solid 1px $articleOddBgColor; /*rgba(255,255,255,0.3);*/
+   padding: 1px 12px;
+}
+
+#financials table th:first-child {
+    width: 200px;
+}
+
+#financials table th:nth-child(2),
+#financials table td:nth-child(2) {
+    width: 125px;
+    text-align: right;
+}
+
+#financials tr.totals td {
+   font-weight: bold;
+}
+
+
+@media all {
+    .page-break	{ display: none; }
+}
+
+@media print {
+    section	{ page-break-before: always; }
+    a[href]:after { content: none !important; }  /* override Bootstrap to not print hyperlink URLs */
+   .page-break	{ display: block; page-break-before: always; }
+   #footer-section { display: none; }  /* don't print footer (copyright) section */
+   .section-item { page-break-inside: avoid; }
+   .section-item h1 { color: $sectionColor !important;}
+   .section-header h1 { background-color: $sectionColor !important; color: white !important; padding-top: 50px !important; padding-bottom: 30px !important;
+       border-radius: 12px !important; margin-right: 50px !important /* for Safari */;
+   }
+
+   a { font-weight: bold; }
+
+}
+
+body {
+	background-color: $articleEvenBgColor;
+}
+
+p {
+   margin-top: 0.85em;
+   margin-bottom: 0.85em;
+}
+
+p.profile-title {
+   margin: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: $headerFontFamily;
+  line-height: 1.25em;
+ }
+
+ h2 {
+   font-size: 1.5em;
+   margin-top: 1.5em;
+ }
+
+/* Nav bar */
+nav a {
+	color: $sectionColor !important;
+	font-family: $headerFontFamily;
+	font-size: 115%;
+        cursor: pointer;
+}
+
+nav a.navbar-brand {
+	color: $articleEvenTextColor !important;
+	font-weight: 700;
+	font-size: 160%;
+}
+
+.navbar {
+	border-color: $articleEvenTextColor;
+	border-right-style: none;
+	border-left-style: none;
+	border-bottom-width: 2px;
+  background-color:rgba(255,255,255,0.9);
+}
+
+nav .report-year {
+	color: $sectionColor;
+}
+nav a#join-button {
+   background-color: $articleOddBgColor;
+   border-radius: 5px !important;
+   color: $articleOddTextColor !important;
+   /* Other buttons have 15px padding, so use 5px padding and 10px margin */
+   padding: 5px 20px !important;
+   margin: 10px !important;
+   font-weight: bold;
+}
+
+
+/* Logo & Footer Sections */
+#logo-section,
+#footer-section {
+	background-color: black;
+}
+
+#logo-section h1,
+#footer-section h4 {
+	color: #e0e0e0;
+}
+
+#logo-section h1 {
+	margin-top: 70px;
+	font-weight: normal;
+	color: #ddd;
+}
+
+#logo-section {
+	padding-top: 120px;
+	padding-bottom: 70px;
+}
+
+
+#footer-section {
+	padding-top: 20px;
+	padding-bottom:  20px;
+}
+
+/* Section Headers */
+.section-header {
+	background-color: $sectionColor;
+	min-height:0;
+	color: white;
+	padding-top: 80px;
+	padding-bottom: 40px;
+}
+
+.section-header h1,
+.section-header h2,
+.section-header h3,
+.section-header h4 {
+	color: white;
+}
+
+.section-header h1 {
+	font-size: 400%;
+	font-weight: 700;
+}
+
+.section-header li {
+  display: inline-block;
+}
+.section-header ul {
+  display: inline-block;
+  margin: 1em 0 0 0;
+  padding: .5em 1.5em;
+  border-top: 1px solid rgba(255,255,255,.25);
+  border-bottom: 1px solid rgba(255,255,255,.25);
+}
+.section-header li > a {
+  display: inline-block;
+  color: rgba(255,255,255,.8);
+  margin: 0.25em 1em;
+}
+.section-header li:not(:last-of-type)::after {
+  // content: '|';
+  color: rgba(255,255,255,.25);
+}
+
+
+#events .section-header ul {
+}
+#events .section-header li {
+  display: block;
+  text-align: left;
+}
+#events .section-header  li::after {
+  content: none;
+}
+
+/* Section Items */
+.section-item {
+	min-height: 500px;
+	padding-top: 70px;
+	padding-bottom: 80px;
+}
+.section-item h1 {
+	margin-bottom: 30px;
+}
+
+blockquote p:first-child {
+  margin-top: 0;
+}
+
+.section-item:nth-child(odd)  {
+	background-color: $articleOddBgColor;
+	color: $articleOddTextColor;
+
+  h1, h2, h3, p {
+    color: $articleOddTextColor;
+  }
+
+  a {
+    color: $articleOddLinkColor;
+  }
+
+  blockquote {
+    border-left: 5px solid rgba(255,255,255,0.5);
+  }
+}
+.section-item:nth-child(even)  {
+	background-color: $articleEvenBgColor;
+	color: $articleEvenTextColor;
+
+  h1, h2, h3, p {
+    color: $articleEvenTextColor;
+  }
+
+  a {
+  	color: $articleEvenLinkColor;
+  }
+
+  blockquote {
+    border-left: 5px solid $articleOddBlockquoteColor;
+  }
+}
+
+.section-item p.author {
+	font-style: italic;
+	margin-top: 0;
+	margin-bottom: 1.5em;
+	margin-top: 0.5em;
+	opacity: 0.7;
+}
+
+.flex-video {
+	margin-top: 1em !important;
+	margin-bottom: 1em !important;
+}
+
+.text-center .img-circle {
+	height: 200px;
+	width: 200px;
+}
+
+.text-center .img-circle.border {
+	border: solid 1px $articleEvenTextColor;
+}
+
+/* Fixes YouTube video to span full width, responsively */
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Board of Directors and Management Team */
+.team img {
+	height: 107px;
+	width: 85px;
+	border-radius: 4px;
+	margin-left: 4px;
+}
+
+.team .outer-container {
+	padding-top: 6px;
+	padding-bottom: 6px;
+        display: block;
+        white-space: nowrap;
+}
+
+.team h3 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 100%;
+	font-weight: bold;
+}
+
+.team .profile-title {
+	font-style: italic;
+}
+
+.team .inner-container {
+	display: inline-block;
+	margin-left: 9px;
+}
+
+#conference-carousel .item {
+    height: 550px;
+    background-color: black;
+}
+
+#conference-carousel .item p,
+#conference-carousel .item h3,
+#conference-carousel .btn {
+    color: white;
+}
+
+.carousel-indicators li {
+   padding: 0;  /* padding stretches the carousel control glyphs vertically, making them ovals instead of circles */
+}
+
+#stats td {
+  font-family: $headerFontFamily;
+  font-size: 115%;
+}
+
+#stats td:first-child {
+   text-align: right;
+   padding-right: 0.25em;
+   font-size: 200%;
+   font-weight: 700;
+}
+
+.chart {
+  height: 300px;
+  width: 400px;
+  margin: 20px 20px 20px 0;
+}
+
+/* Charts need to be smaller on phones */
+@media (max-width: 768px) {
+  .chart { height: 250px; width: 275px; }
+}
+
+/* Special sizing for larger displays */
+@media only screen and (min-device-width: 481px) {
+	.section-item { font-size: 125%; }
+	.col-md-3 img { margin-top:40px; }
+	.navbar { font-size: 125%; }
+	.navbar-brand { font-size:150%; }
+	.flex-video iframe { width: 500; }
+	#logo-section { padding-top: 200px; }
+	#logo-section h1 { margin-top: 100px; }
+}
