@@ -2,12 +2,22 @@ $headerFontFamily: 'Open Sans Condensed', sans-serif;
 $sectionColor: #ff5335;
 $articleOddBgColor: rgb(66, 50, 106);
 $articleOddBlockquoteColor: rgba(66, 50, 106, 0.5);
+$articleOddHeaderColor: rgba(255,255,255,1);
 $articleOddTextColor: rgba(255,255,255,0.8);
 $articleOddLinkColor: #ff664c;
 $articleEvenBgColor: white;
-$articleEvenlockquoteColor: rgba(255,255,255,0.5);
+$articleEvenBlockquoteColor: rgba(255,255,255,0.5);
+$articleEvenHeaderColor: #42326a;
 $articleEvenTextColor: #42326a;
 $articleEvenLinkColor: #ff5335;
+
+#growth #new-member-count {
+  font-family: $headerFontFamily;
+  font-weight: bold;
+  font-size: 200%;
+  padding: 0 .1em;
+  color: white;
+}
 
 .in-progress {
   color: red;
@@ -225,7 +235,10 @@ blockquote p:first-child {
 	background-color: $articleOddBgColor;
 	color: $articleOddTextColor;
 
-  h1, h2, h3, p {
+  h1 {
+    color: $articleOddHeaderColor;
+  }
+  h2, h3, p {
     color: $articleOddTextColor;
   }
 
@@ -241,7 +254,10 @@ blockquote p:first-child {
 	background-color: $articleEvenBgColor;
 	color: $articleEvenTextColor;
 
-  h1, h2, h3, p {
+  h1 {
+    color: $articleEvenHeaderColor;
+  }
+  h2, h3, p {
     color: $articleEvenTextColor;
   }
 

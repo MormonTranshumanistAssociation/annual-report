@@ -13,18 +13,18 @@ function drawCharts() {
   var chart;
   var data;
   var options;
-  var basicDefaults = { 
-     'titleTextStyle': {fontSize: 24, fontName: 'Open Sans Condensed', bold: false}, 
-     'width':width, 
-     'height':height, 
-     'pieHole':0.4, 
+  var basicDefaults = {
+     'titleTextStyle': {fontSize: 24, fontName: 'Open Sans Condensed', bold: false},
+     'width':width,
+     'height':height,
+     'pieHole':0.4,
      'hAxis': {'slantedText':true },
   }
-  
+
   var optionDefaults = $.extend( { 'chartArea': {'left': 10, 'width': '70%' } }, basicDefaults );
   var barChartDefaults = $.extend( { 'chartArea': {'left': '10%', 'width': '60%' } }, basicDefaults );
 
-  options = $.extend( {'title':'Total Membership 2006-2014', 'legend': { position: 'none' } }, basicDefaults );
+  options = $.extend( {'title':'Total Membership 2006-2015', 'legend': { position: 'none' } }, basicDefaults );
   chart = new google.visualization.ColumnChart(document.getElementById('chart_growth'));
   data = new google.visualization.DataTable();
   data.addColumn('string', 'Year');
@@ -38,7 +38,8 @@ function drawCharts() {
     ['2011', 139],
     ['2012', 246],
     ['2013', 380],
-    ['2014', 480]
+    ['2014', 480],
+    ['2015', 565]
     ]);
   chart.draw(data, options);
 
@@ -48,11 +49,11 @@ function drawCharts() {
   data.addColumn('string', 'Region');
   data.addColumn('number', 'Count');
   data.addRows([
-    ['USA', 53],
+    ['USA', 48],
     ['Other Americas', 4],
-    ['Europe', 3],
-    ['Africa', 3],
-    ['Australia/Asia', 2]
+    ['Europe', 1],
+    ['Africa', 1],
+    ['Australia/Asia', 1]
     ]);
   chart.draw(data, options);
 
@@ -62,12 +63,10 @@ function drawCharts() {
   data.addColumn('string', 'Religion');
   data.addColumn('number', 'Count');
   data.addRows([
-    ['The Church of Jesus Christ of Latter-day Saints (LDS)', 40],
+    ['The Church of Jesus Christ of Latter-day Saints (LDS)', 35],
     ['Non-LDS Mormon', 3],
-    ['Non-Mormon Christian', 4],
-    ['Non-Christian Abrahamic', 2],
-    ['Other', 6],
-    ['None', 10]
+    ['Other', 8],
+    ['None', 9]
     ]);
   chart.draw(data, options);
 
@@ -77,10 +76,10 @@ function drawCharts() {
   data.addColumn('string', 'Perspective');
   data.addColumn('number', 'Count');
   data.addRows([
-    ['Agnostic', 14],
+    ['Agnostic', 10],
     ['Atheist', 9],
-    ['Theist', 38],
-    ['No opinion', 4]
+    ['Theist', 34],
+    ['No opinion', 2]
     ]);
   chart.draw(data, options);
 
@@ -90,14 +89,13 @@ function drawCharts() {
   data.addColumn('string', 'Birth Year');
   data.addColumn('number', 'Count');
   data.addRows([
-    ['Unspecified', 5],
-    ['1-19', 1],
-    ['20-29', 13],
-    ['30-39', 24],
-    ['40-49', 12],
-    ['50-59', 6],
+    ['1-19', 0],
+    ['20-29', 14],
+    ['30-39', 19],
+    ['40-49', 9],
+    ['50-59', 5],
     ['60-69', 4],
-    ['70+', 1],
+    ['70+', 3],
     ]);
   chart.draw(data, options);
 
@@ -107,9 +105,8 @@ function drawCharts() {
   data.addColumn('string', 'Gender');
   data.addColumn('number', 'Count');
   data.addRows([
-    ['Unspecified', 2],
-    ['Female', 7],
-    ['Male', 53],
+    ['Female', 5],
+    ['Male', 49],
     ]);
   chart.draw(data, options);
 
@@ -119,11 +116,11 @@ function drawCharts() {
   data.addColumn('string', 'Race');
   data.addColumn('number', 'Count');
   data.addRows([
-    ['Unspecified', 3],
-    ['African American / Black', 2],
+    ['Unspecified', 1],
+    ['African American / Black', 0],
     ['Asian', 1],
-    ['Caucasian / White', 54],
-    ['Hispanic / Latino', 2],
+    ['Caucasian / White', 49],
+    ['Hispanic / Latino', 1],
     ['Other', 1],
     ]);
   chart.draw(data, options);
@@ -136,12 +133,12 @@ function drawCharts() {
   data.addRows([
     ['Unspecified', 0],
     ['Less than High School Diploma', 0],
-    ['High School Diploma', 4],
+    ['High School Diploma', 0],
     ['Tech. or Voc. Training', 1],
-    ['Some College', 11],
-    ['College Degree', 15],
-    ['Post Graduate Training', 6],
-    ['Post Graduate Degree', 26],
+    ['Some College', 7],
+    ['College Degree', 17],
+    ['Post Graduate Training', 5],
+    ['Post Graduate Degree', 24],
     ]);
   chart.draw(data, options);
 
@@ -152,8 +149,8 @@ function drawCharts() {
   data.addColumn('string', 'Level of Satisfaction');
   data.addColumn('number', 'Count');
   data.addRows([
-    ['Very satisfied', 19],
-    ['Satisfied', 43],
+    ['Very satisfied', 18],
+    ['Satisfied', 34],
     ['Unsatisfied', 2],
     ['Very unsatisfied', 1],
     ]);
@@ -165,9 +162,9 @@ function drawCharts() {
   data.addColumn('string', 'Level of Importance');
   data.addColumn('number', 'Count');
   data.addRows([
-    ['Very important', 25],
-    ['Important', 35],
-    ['Unimportant', 5],
+    ['Very important', 24],
+    ['Important', 25],
+    ['Unimportant', 6],
     ['Very unimportant', 0],
     ]);
   chart.draw(data, options);
@@ -178,10 +175,10 @@ function drawCharts() {
   data.addColumn('string', 'Political View');
   data.addColumn('number', 'Count');
   data.addRows([
-    ['Conservative', 13],
+    ['Conservative', 4],
     ['Moderate', 12],
-    ['Progressive', 34],
-    ['No opinion', 6],
+    ['Progressive', 39],
+    ['No opinion', 0],
     ]);
   chart.draw(data, options);
 
@@ -191,10 +188,10 @@ function drawCharts() {
   data.addColumn('string', 'Political View');
   data.addColumn('number', 'Count');
   data.addRows([
-    ['Conservative', 19],
+    ['Conservative', 11],
     ['Moderate', 20],
-    ['Progressive', 21],
-    ['No opinion', 5],
+    ['Progressive', 24],
+    ['No opinion', 0],
     ]);
   chart.draw(data, options);
 
@@ -205,14 +202,14 @@ function drawCharts() {
   data.addColumn('number', 'Count');
   data.addRows([
     ['Unspecified', 0],
-    ['Single, never married', 9],
-    ['Unmarried, living with partner', 1],
-    ['Married, never divorced', 47],
-    ['Separated', 0],
-    ['Divorced', 1],
-    ['Divorced, remarried', 4],
+    ['Single, never married', 7],
+    ['Unmarried, living with partner', 0],
+    ['Married, never divorced', 37],
+    ['Separated', 4],
+    ['Divorced', 3],
+    ['Divorced, remarried', 3],
     ['Widowed', 0],
-    ['Widowed, remarried', 1],
+    ['Widowed, remarried', 0],
     ]);
   chart.draw(data, options);
 
@@ -223,11 +220,11 @@ function drawCharts() {
   data.addColumn('number', 'Count');
   data.addRows([
     ['Unspecified', 0],
-    ['0', 18],
-    ['1', 6],
-    ['2-3', 25],
-    ['4-6', 10],
-    ['7+', 3],
+    ['0', 11],
+    ['1', 8],
+    ['2-3', 22],
+    ['4-6', 12],
+    ['7+', 1],
     ]);
   chart.draw(data, options);
 
@@ -237,16 +234,15 @@ function drawCharts() {
   data.addColumn('string', 'Reason');
   data.addColumn('number', 'Count');
   data.addRows([
-    ['Intellectual stimulation', 50],
-    ['Spiritual stimulation', 31],
-    ['Friendship or networking', 33],
-    ['Support diverse Mormonism', 35],
-    ['Support diverse Transhumanism', 34],
-    ['Mormon Transhumanist activism', 25],
-    ['Other', 4],
+    ['Intellectual stimulation', 46],
+    ['Spiritual stimulation', 37],
+    ['Friendship or networking', 27],
+    ['Support diverse Mormonism', 32],
+    ['Support diverse Transhumanism', 26],
+    ['Mormon Transhumanist activism', 20],
+    ['Other', 14],
     ]);
   chart.draw(data, options);
-
 }
 
 google.load('visualization', '1.0', {'packages':['corechart']});
